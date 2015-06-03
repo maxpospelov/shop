@@ -46,11 +46,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development, :test do
+group :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'

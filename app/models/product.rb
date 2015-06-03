@@ -1,3 +1,4 @@
+
 class Product < ActiveRecord::Base
-  validate :name, presence: true
+  validates :name, presence: true, uniqueness: true
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "products/new"
+  get "products/show"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get "static_pages/blog"
@@ -57,4 +59,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :products
 end

@@ -28,6 +28,22 @@ RSpec.describe Product, type: :model do
       subject{ @product }
 
       it{ expect(subject).to be_valid }
+
+      it "requires name" do
+        subject.name = nil
+        expect(subject).to validate_presence_of(:name)
+      end
+
+      it "uniquness name" do
+        product = subject.dup
+        expect(product).to validate_uniqueness_of(:name)
+      end
+
+      it "price should be not negative" do
+        subject.price = 0.01
+        expect(subject).to be_valid
+      end
+
     end
   end
 

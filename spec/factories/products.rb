@@ -1,6 +1,8 @@
-FactoryGirl.define do
+FactoryGirl.define  do
+  sequence(:name){|n| "Prod#{n}"}
+
   factory :product do
-    sequence(:name){|n| "Prodcut#{n}"}
+    name      { FactoryGirl.generate(:name) }
     active true
     recommend true
     article "Article"
@@ -12,5 +14,4 @@ FactoryGirl.define do
     short_description "Short Description"
     full_description "Full Description"
   end
-
 end
