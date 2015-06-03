@@ -8,7 +8,9 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'pg'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+
 gem 'simple_form'
 gem 'haml-rails'
 # Use SCSS for stylesheets
@@ -44,3 +46,15 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+end
