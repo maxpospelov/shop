@@ -1,4 +1,5 @@
-%h1 Рекомендуемые товары
-%ul.tiny_products
-  - @products.each do |product|
-    = render partial: "products/product_showcase", locals: {product: product}
+- if products.present?
+  %h1 Рекомендуемые товары
+  %ul.tiny_products
+    - products.each do |product|
+      = render partial: "products/product_showcase", locals: {product: product}

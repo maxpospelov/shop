@@ -1,0 +1,5 @@
+- if discount_products.present?
+  %h1 Акционные товары
+  %ul.tiny_products
+    - discount_products.each do |product|
+      = render partial: "products/product_showcase", locals: {product: product}
