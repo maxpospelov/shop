@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'pg'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
 gem 'simple_form'
 gem 'haml-rails'
 # Use SCSS for stylesheets
@@ -47,4 +48,7 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end

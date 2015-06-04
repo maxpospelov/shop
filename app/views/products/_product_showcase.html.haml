@@ -1,0 +1,15 @@
+%li.product
+  .image= link_to(image_tag 'phone.jpeg')
+  %h3
+    = link_to(product.name, product_path(product))
+  %form.variants
+    %table
+      %tbody
+        %tr.variant
+          %td
+          %td
+          %td
+            %span.price
+              = number_to_currency(product.price)
+              %span.currency
+    %input{type: "submit", value: "в корзину", class: "button" }
