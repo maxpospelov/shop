@@ -1,0 +1,11 @@
+#top
+  %ul#menu
+    %li.selected= link_to "Главная", root_path
+    %li= link_to "Блог", static_pages_blog_path
+    %li= link_to "Доставка", "#"
+    %li= link_to "Оплата", "#"
+    %li= link_to "Контакты", "#"
+  #cart_informer Корзина пуста
+  #account
+    = link_to("Регистрация", "#" , :id => "register")
+    = link_to("Вход", static_pages_home_path, :id  => "login")

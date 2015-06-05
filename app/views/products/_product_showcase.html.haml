@@ -10,6 +10,6 @@
           %td
           %td
             %span.price
-              = number_to_currency(product.price)
+              = number_to_currency(product.price, unit: "руб.", separator: ".", delimiter: " ", format: "%n %u")
               %span.currency
     %input{type: "submit", value: "в корзину", class: "button" }

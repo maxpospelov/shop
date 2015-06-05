@@ -15,4 +15,10 @@ FactoryGirl.define do
     short_description   "Short description product"
     full_description    "Full description product"
   end
+
+  factory :visit_product do
+    association :product
+    sessionid  '111'
+  end
+
 end
