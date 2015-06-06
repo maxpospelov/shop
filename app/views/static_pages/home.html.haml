@@ -1,5 +1,4 @@
 %h1 О магазине
-= request.session_options[:id]
 %p Этот магазин является демонстрацией скрипта интернет-магазина. Все материалы на этом сайте присутствуют исключительно в демострационных целях.
 = render partial: "products/recommend", locals: {products: @products}
 = render partial: "products/discount",  locals: {discount_products: @discount_products}

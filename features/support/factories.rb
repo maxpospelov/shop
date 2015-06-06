@@ -1,4 +1,5 @@
 require "factory_girl"
+include ActionDispatch::TestProcess
 
 FactoryGirl.define do
   factory :product do
@@ -14,6 +15,7 @@ FactoryGirl.define do
     keywords            "Keyword"
     short_description   "Short description product"
     full_description    "Full description product"
+    image               { fixture_file_upload("spec/support/image/image.jpeg", "image/jpeg") }
   end
 
   factory :visit_product do

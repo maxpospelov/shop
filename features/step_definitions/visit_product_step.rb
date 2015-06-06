@@ -11,7 +11,7 @@ When(/^Count visit Product page (\d+)\.$/) do |arg1|
 end
 
 Then(/^Visit blog must have content "(.*?)"\.$/) do |arg1|
- expect(page).to have_selector('div#left h2', text: arg1)
+ expect(page).to have_selector('div#left h2')
 end
 
 Then(/^Count product in visit blog equal (\d+)\.$/) do |arg1|

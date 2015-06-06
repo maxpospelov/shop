@@ -13,7 +13,7 @@ ActiveAdmin.register Product do
 #   permitted
 # end
 
-  permit_params :name, :active,:recommend, :article, :price, :old_price, :slug, :description_page, :keywords, :short_description, :full_description
+  permit_params :name, :active,:recommend, :article, :price, :old_price, :slug, :description_page, :keywords, :short_description, :full_description, :image
 
   form do |f|
     f.inputs "Details" do
@@ -25,6 +25,7 @@ ActiveAdmin.register Product do
       f.input :slug
       f.input :description_page
       f.input :keywords
+      f.input :image
       f.input :short_description
       f.input :full_description, as: :text, label: 'Полное описнаие'
 
