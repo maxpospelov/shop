@@ -11,14 +11,11 @@ Then(/^User should see thumb image of products\.$/) do
 end
 
 
-
-
 When(/^User visit product page\.$/) do
   @product = create(:product)
   visit product_path @product
 end
 
 Then(/^User should see image of product\.$/) do
-  expect(page).to have_selector("div.product div.image a img")
-  expect(page).to have_xpath("//div[@class='product']/div[@class='image']/a[@href='#{product_path(@product)}']/img[contains(@src, '#{@product.image}')]")
+  expect(page).to have_xpath("//div[@class='product']/div[@class='image']/a[@href='#{product_path(@product)}']/img[contains(@src, 'image.jpeg')]")
 end
