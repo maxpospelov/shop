@@ -4,11 +4,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-
-    unless  VisitProduct.where(product_id: @product.id, sessionid: request.session_options[:id])
-      VisitProduct.create(product_id: @product.id, sessionid: request.session_options[:id])
-    end
-    
+    create_visit_products
   end
 
   def new
@@ -21,5 +17,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def create_visit_products
+      VisitProduct.create(product_id: @product.id, sessionid: request.session_options[:id]) unless @product.visit_products.empty?
   end
 end

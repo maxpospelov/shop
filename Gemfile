@@ -12,6 +12,8 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'simple_form'
 gem 'haml-rails'
+gem 'carrierwave'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

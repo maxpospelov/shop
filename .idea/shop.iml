@@ -130,6 +130,7 @@
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.10, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.1.4, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.7.6, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="carrierwave (v0.10.0, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.9.1.1, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v3.5.1, RVM: ruby-1.9.3-p551 [3.2.0]) [gem]" level="application" />

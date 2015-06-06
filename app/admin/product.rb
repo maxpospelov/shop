@@ -15,4 +15,21 @@ ActiveAdmin.register Product do
 
   permit_params :name, :active,:recommend, :article, :price, :old_price, :slug, :description_page, :keywords, :short_description, :full_description
 
+  form do |f|
+    f.inputs "Details" do
+      f.input :name
+      f.input :active
+      f.input :recommend
+      f.input :price
+      f.input :old_price
+      f.input :slug
+      f.input :description_page
+      f.input :keywords
+      f.input :short_description
+      f.input :full_description, as: :text, label: 'Полное описнаие'
+
+    end
+    f.button "Отправить"
+  end
+
 end

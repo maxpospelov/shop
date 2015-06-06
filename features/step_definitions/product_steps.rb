@@ -27,6 +27,13 @@ def create_visit_product count
   @visit_product = (0..count.to_i).collect{ |c| create(:visit_product, sessionid:  'ca0e7158f2eb9c665377a83d43d577c7' , product_id: c)}
 end
 
-def current_sessionss
-  request.session_options[:id] = 'ca0e7158f2eb9c665377a83d43d577c7'
+
+def visit_products_page products
+  products.each do |product|
+    visit product_path product
+  end
+end
+
+def search_link selector, href
+  expect(page).to     have_css("a[href='#{href}']")
 end
