@@ -2,4 +2,4 @@
   #all_brands
     %h2 Все бренды:
     - brands_list.each do |brand|
-      = link_to(brand.name, '#')
+      = link_to("#{brand.name}(#{brand.products.count})", brand_path(brand))

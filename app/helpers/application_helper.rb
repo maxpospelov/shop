@@ -6,4 +6,8 @@ module ApplicationHelper
   def brands_list
     Brand.all
   end
+
+  def number_to_rubel price
+    number_to_currency(price, unit: "руб.", separator: ".", delimiter: " ", format: "%n %u")
+  end
 end

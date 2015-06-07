@@ -4,7 +4,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    create_visit_products
+    if @product.active
+      create_visit_products
+    else
+      raise ActiveRecord::RecordNotFound
+    end
   end
 
   def new

@@ -25,3 +25,18 @@ Feature: Brand Blog
     When The user visit site.
     Then The user should not see the blog with brands.
 
+
+  Scenario: Click on brand link.
+    Given Admin create 6 brands
+    And Create 36 product
+    And Link them with the goods.
+    When User visit home page.
+    And Click on brand link.
+    Then Should see product list with brand.
+
+  Scenario: Click on brand link without products.
+    Given Admin create 6 brands
+    And Create 0 product
+    When User visit home page.
+    And Click on brand link.
+    Then Should not see product list with brand.

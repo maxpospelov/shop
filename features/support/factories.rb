@@ -16,6 +16,7 @@ FactoryGirl.define do
     short_description   "Short description product"
     full_description    "Full description product"
     image               { fixture_file_upload("spec/support/image/image.jpeg", "image/jpeg") }
+    association         :brand, factory: :brand
   end
 
   factory :visit_product do

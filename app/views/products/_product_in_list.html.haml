@@ -1,0 +1,9 @@
+%li.product
+  .image= link_to(image_tag(product.image_url(:medium)), product_path(product))
+  .product_info
+    %h3= link_to product.name, product_path(product)
+    .annotation= product.short_description
+    %form.variants
+      %span.price
+        = number_to_rubel product.price
+      %button в корзину
