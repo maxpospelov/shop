@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "catalogs/index"
   get "brands/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -64,6 +65,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :products
-  resources :brands
+  resources :products,  only: [:index, :show]
+  resources :brands,    only: [:index, :show]
+  resources :catalogs,  only: [:index, :show]
 end

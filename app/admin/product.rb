@@ -27,26 +27,26 @@ ActiveAdmin.register Product do
     actions
   end
 
-  permit_params :name, :active,:recommend, :article, :price, :old_price, :slug, :description_page, :keywords, :short_description, :full_description, :image, :brand_id
+  permit_params :name, :active,:recommend, :article, :price, :old_price, :slug, :description_page, :keywords, :short_description, :full_description, :image, :brand_id, :catalog_id, :product_id
 
-  form do |f|
+  form(:html => { :multipart => true }) do |f|
     f.inputs "Details" do
       f.input :name
       f.input :active
       f.input :recommend
       f.input :brand_id, as: :select, collection: Brand.all
+      f.input :catalog_id, as: :select, collection: Catalog.all
       f.input :price
       f.input :old_price
       f.input :slug
       f.input :description_page
       f.input :keywords
-      f.input :image, :as => :file, :hint => image_tag(f.product.image_url(:thumb))
       f.input :image, :as => :hidden
+      f.input :image, as: :file, hint: f.image_tag(f.object.image.url)
       f.input :short_description
       f.input :full_description, as: :text, label: 'Полное описнаие'
-
     end
-    f.button "Отправить"
+    f.actions
   end
 
 end

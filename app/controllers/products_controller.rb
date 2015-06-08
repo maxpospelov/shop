@@ -26,6 +26,11 @@ class ProductsController < ApplicationController
   private
 
   def create_visit_products
-      VisitProduct.create(product_id: @product.id, sessionid: request.session_options[:id])  if  @product.visit_products.empty?
+      VisitProduct.create(product_id: @product.id, sessionid: request.session_options[:id])  if user_not_visit_product(@product, request.session_options[:id])
+  end
+
+  def user_not_visit_product product, user
+    return true if VisitProduct.where(product_id: product.id, sessionid: user).empty?
+    false
   end
 end

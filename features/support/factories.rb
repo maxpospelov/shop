@@ -17,11 +17,24 @@ FactoryGirl.define do
     full_description    "Full description product"
     image               { fixture_file_upload("spec/support/image/image.jpeg", "image/jpeg") }
     association         :brand, factory: :brand
+    association         :catalog, factory: :catalog
   end
 
   factory :visit_product do
     association :product
     sessionid  '111'
+  end
+
+  factory :catalog do
+    sequence(:name){|n| "Catalog#{n}"}
+    active true
+    parent_id nil
+    address :name
+    title   "Title"
+    keywords  "Keyword"
+    page_description "Page"
+    image   "Image"
+    full_description  "Description"
   end
 
   factory :brand do

@@ -1,0 +1,12 @@
+-unless catalog_list.empty?
+  #catalog_menu
+    %ul
+      - catalog_list.each do |catalog|
+        - unless catalog.parent_id
+          %li
+            = link_to catalog.name, catalog_path(catalog)
+            -if child_catalog(catalog)
+              %ul
+                - child_catalog(catalog).each do |child|
+                  %li= link_to(child.name, catalog_path(child))
+
