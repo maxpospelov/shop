@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
-  get "products/new"
-  get "products/show"
+  get "carts/show"
+  get "carts/create"
+  get "carts/edit"
+  get "carts/new"
+  #get "line_items/index"
+  #get "line_items/create"
+  get "catalogs/index"
+  get "brands/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  get "products/index"
+  get "products/show"
+  get "products/new"
+  get "products/edit"
+  get "products/update"
+  get "products/destroy"
   get "static_pages/blog"
   get "static_pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -59,5 +71,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :products
+  resources :products,  only: [:index, :show]
+  resources :brands,    only: [:index, :show]
+  resources :catalogs,  only: [:index, :show]
+  resources :line_items
+  resources :carts
 end

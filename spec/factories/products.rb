@@ -1,17 +1,16 @@
-FactoryGirl.define  do
-  sequence(:name){|n| "Prod#{n}"}
-
+FactoryGirl.define do
   factory :product do
-    name      { FactoryGirl.generate(:name) }
-    active true
-    recommend true
-    article "Article"
-    price 200.00
-    old_price 100.00
-    slug "slug"
-    description_page "Description page"
-    keywords  "Keywords"
-    short_description "Short Description"
-    full_description "Full Description"
+    sequence(:name){|n| "Product#{n}"}
+
+    active              true
+    recommend           false
+    article             "A1"
+    price               200
+    old_price           100
+    slug                "phone"
+    description_page    "Description about page"
+    keywords            "Keyword"
+    short_description   "Short description product"
+    full_description    "Full description product"
   end
 end

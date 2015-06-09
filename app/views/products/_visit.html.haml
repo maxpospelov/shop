@@ -1,0 +1,5 @@
+- unless goods_visit_list.empty?
+  %h2 Вы просматривали:
+  %ul#browsed_products
+    - goods_visit_list.each do |product|
+      %li= link_to image_tag(product.product.image_url(:thumb)), product_path(product.product)

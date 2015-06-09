@@ -1,0 +1,4 @@
+%h1= @brand.name
+%ul.products
+  - @products.each do |product|
+    = render partial: 'products/product_in_list', locals: {product: product}

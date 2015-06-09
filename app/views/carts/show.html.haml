@@ -1,0 +1,19 @@
+%h1 В корзине
+= link_to "Delete", cart_path(@cart), method: :delete
+%table#purchases
+  %tbody
+    -@cart.line_items.each do |line_item|
+      %tr
+        %td.image
+          = link_to image_tag(line_item.product.image_url(:thumb)), product_path(line_item.product)
+        %td.name
+          = link_to line_item.product.name, product_path(line_item.product)
+        %td.price
+          = number_to_rubel line_item.product.price
+        %td.amount
+          %select
+            %option{:value => line_item.count, :selected => true}= line_item.count
+            -(1..50).each do |i|
+              %option{:value => i}= i
+        %td.remove
+          = link_to image_tag('delete.png'), line_item_path(line_item), method: :delete

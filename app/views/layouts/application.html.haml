@@ -5,16 +5,19 @@
 !!!
 %html
   %head
-  %title Shop
+  %title
+    = yield :title
   = stylesheet_link_tag 'application', :media => 'all'
   = javascript_include_tag 'application'
   = csrf_meta_tags
   %body
     #top_background
-      = render 'layouts/header'
+      = render 'layouts/top_background'
     #header
+      = render 'layouts/header'
     #main
       #content
         = yield
       #left
+        = render 'layouts/left'
     #footer

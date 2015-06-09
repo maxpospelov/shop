@@ -8,11 +8,19 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 gem 'pg'
 
+<<<<<<< HEAD
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
+=======
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
+>>>>>>> feature
 gem 'simple_form'
 gem 'haml-rails'
+gem 'carrierwave'
+gem "rmagick"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,7 +37,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0',      group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
@@ -46,6 +54,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+<<<<<<< HEAD
 group :test do
   gem 'pry-rails'
   gem 'pry-nav'
@@ -58,3 +67,14 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers'
 end
+=======
+group :development, :test do
+  gem 'rack_session_access'
+  gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
+end
+>>>>>>> feature
