@@ -37,3 +37,7 @@ end
 def search_link selector, href
   expect(page).to     have_css("a[href='#{href}']")
 end
+
+def line_item_post line_item
+  page.driver.post(line_items_path,{product_id: line_item.product.id})
+end

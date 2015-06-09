@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
-  has_many :visit_products
+  has_many :visit_products, dependent: :destroy
+  has_many :line_items, dependent: :destroy
+
   belongs_to :brand
   belongs_to  :catalog
 

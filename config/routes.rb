@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get "carts/show"
+  get "carts/create"
+  get "carts/edit"
+  get "carts/new"
+  #get "line_items/index"
+  #get "line_items/create"
   get "catalogs/index"
   get "brands/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -68,4 +74,6 @@ Rails.application.routes.draw do
   resources :products,  only: [:index, :show]
   resources :brands,    only: [:index, :show]
   resources :catalogs,  only: [:index, :show]
+  resources :line_items
+  resources :carts
 end

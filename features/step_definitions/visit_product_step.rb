@@ -1,6 +1,4 @@
 
-#session.visit() # use it to call DSL methods
-
 Given(/^User visit home page\.$/) do
   visit root_path
 end

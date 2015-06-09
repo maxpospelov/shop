@@ -45,4 +45,12 @@ FactoryGirl.define do
     image "image.png"
   end
 
+  factory :cart do
+  end
+
+  factory :line_item do
+    association         :product, factory: :product
+    association         :cart,    factory: :cart
+  end
+
 end

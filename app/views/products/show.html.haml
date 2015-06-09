@@ -5,12 +5,5 @@
     =  link_to(image_tag(@product.image_url(:large)), product_path(@product))
   .description
     = @product.full_description
-    %form
-      %table
-        %tbody><
-          %tr.variant
-            %td
-            %td
-              %span.price= @product.price
-
-      = button_to "в корзину"
+    %p
+    =render partial: 'price', locals: {product: @product}

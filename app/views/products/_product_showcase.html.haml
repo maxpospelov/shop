@@ -1,15 +1,4 @@
 %li.product
   .image= link_to(image_tag(product.image_url(:medium)), product_path(product))
-  %h3
-    = link_to(product.name, product_path(product))
-  %form.variants
-    %table
-      %tbody
-        %tr.variant
-          %td
-          %td
-          %td
-            %span.price
-              = number_to_currency(product.price, unit: "руб.", separator: ".", delimiter: " ", format: "%n %u")
-              %span.currency
-    %input{type: "submit", value: "в корзину", class: "button" }
+  %h3= link_to(product.name, product_path(product))
+  =render partial: 'products/price', locals: {product: product}

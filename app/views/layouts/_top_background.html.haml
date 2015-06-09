@@ -5,7 +5,11 @@
     %li= link_to "Доставка", "#"
     %li= link_to "Оплата", "#"
     %li= link_to "Контакты", "#"
-  #cart_informer Корзина пуста
+  #cart_informer
+    -unless session[:cart_id]
+      Корзина пуста
+    -else
+      =link_to "корзине", cart_path(session[:cart_id])
   #account
     = link_to("Регистрация", "#" , :id => "register")
     = link_to("Вход", static_pages_home_path, :id  => "login")
