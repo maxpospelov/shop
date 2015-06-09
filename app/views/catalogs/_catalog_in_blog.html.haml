@@ -8,5 +8,7 @@
             -if child_catalog(catalog)
               %ul
                 - child_catalog(catalog).each do |child|
-                  %li= link_to(child.name, catalog_path(child))
+                  - if catalog_has_product? child
+                    %li= link_to(child.name, catalog_path(child))
+
 

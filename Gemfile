@@ -5,17 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 #db
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'pg'
-
-<<<<<<< HEAD
-gem 'activeadmin', github: 'activeadmin'
-gem 'devise'
-
-=======
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
->>>>>>> feature
 gem 'simple_form'
 gem 'haml-rails'
 gem 'carrierwave'
@@ -54,20 +47,6 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-<<<<<<< HEAD
-group :test do
-  gem 'pry-rails'
-  gem 'pry-nav'
-  gem 'pry-stack_explorer'
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'launchy'
-  gem 'shoulda-matchers'
-end
-=======
 group :development, :test do
   gem 'rack_session_access'
   gem 'rspec-rails'
@@ -77,4 +56,3 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'selenium-webdriver'
 end
->>>>>>> feature

@@ -47,5 +47,5 @@ ActiveAdmin.register Product do
       f.input :full_description, as: :text, label: 'Полное описнаие'
     end
     f.actions
-  end
+  end\
 end

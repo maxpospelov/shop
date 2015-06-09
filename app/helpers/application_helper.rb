@@ -16,17 +16,51 @@ module ApplicationHelper
     catalog_has_products? catalogs
   end
 
+
   def catalog_has_products? catalogs
     catalogs.delete_if do |catalog|
-       catalog.products.empty?
+       true unless catalog_show? catalog
     end
-    catalogs
   end
+
+
 
   def child_catalog catalog
     if child_catalog = Catalog.where(parent_id: catalog.id)
-      return child_catalog
+      child_catalog
     end
+  end
+
+  def catalog_show? catalog
+    if catalog_has_product? catalog
+     return true
+    else
+      has_child_and_child_has_product? catalog
+    end
+  end
+
+  def catalog_has_product? catalog
+    catalog.products.empty? ? false : true
+  end
+
+  def has_child_and_child_has_product? catalog
+    if catalog_has_child? catalog
+      return  child_has_product? catalog
+    end
+    false
+  end
+
+  def catalog_has_child? catalog
+    Catalog.where(parent_id: catalog.id).empty? ? false : true
+  end
+
+  def child_has_product? catalog
+    result = false
+    children = child_catalog catalog
+    children.each do |child|
+      result = result || catalog_has_product?(child)
+    end
+    result
   end
 
 end
