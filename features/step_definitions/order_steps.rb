@@ -14,7 +14,7 @@ end
 
 
 Then(/^The user should see element "(.*?)" with text "(.*?)"\.$/) do |element, text|
-  expect(page).to have_selector(element, text)
+  expect(page).to have_selector(element, text: text)
 end
 
 Then(/^The user should see image thump product\.$/) do
@@ -68,4 +68,43 @@ end
 Then(/^Item should remove from cart\.$/) do
   expect(page).to have_selector('tr', count: (@cart.line_items.count - 1))
 end
+
+Given(/^Create line item\.$/) do
+  @line_item = create(:line_item)
+  visit cart_path @line_item.cart
+end
+
+Then(/^The user should see new order form\.$/) do
+  expect(page).to have_selector('form', text: "Имя, фамилия" )
+end
+
+When(/^Insert name "(.*?)"\.$/) do |arg1|
+  fill_in 'Имя, фамилия', with: arg1
+end
+
+When(/^Insert email "(.*?)"\.$/) do |arg1|
+  fill_in 'Email', with: arg1
+end
+
+When(/^Insert address "(.*?)"\.$/) do |arg1|
+  fill_in 'Адрес доставки', with: arg1
+end
+
+When(/^Insert phone "(.*?)"\.$/) do |arg1|
+  fill_in 'Телефон', with: arg1
+end
+
+When(/^Click button "(.*?)"$/) do |arg1|
+  click_button arg1
+end
+
+Then(/^In table order should be has record with "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/) do |name, email, address, phone|
+  order = Order.last
+  expect(order.user_name).to eq(name)
+  expect(order.email).to eq(email)
+  expect(order.address).to eq(address)
+  expect(order.phone).to eq(phone)
+end
+
+
 

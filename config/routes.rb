@@ -76,4 +76,6 @@ Rails.application.routes.draw do
   resources :catalogs,  only: [:index, :show]
   resources :line_items
   resources :carts
+  resources :orders
+
 end

@@ -48,9 +48,13 @@ FactoryGirl.define do
   factory :cart do
   end
 
+  factory :order do
+  end
+
   factory :line_item do
-    association         :product, factory: :product
-    association         :cart,    factory: :cart
+    association         :product,   factory: :product
+    association         :cart,      factory: :cart
+    association         :order,     factory: :order
   end
 
 end
