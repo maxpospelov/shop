@@ -1,2 +1,6 @@
-%h1 StaticPages#blog
-%p Find me in app/views/static_pages/blog.html.haml
+%h1 Блог
+%ul#blog
+  - @posts.each do |post|
+    %li
+      %h3= link_to post.title, blog_post_path(post)
+    %p= post.created_at

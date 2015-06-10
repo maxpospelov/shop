@@ -1,28 +1,15 @@
 Rails.application.routes.draw do
-  get "carts/show"
-  get "carts/create"
-  get "carts/edit"
-  get "carts/new"
-  #get "line_items/index"
-  #get "line_items/create"
-  get "catalogs/index"
-  get "brands/index"
+  root 'static_pages#home'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get "products/index"
-  get "products/show"
-  get "products/new"
-  get "products/edit"
-  get "products/update"
-  get "products/destroy"
-  get "static_pages/blog"
+
+  get "blog" => 'static_pages#blog'
   get "static_pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#home'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -71,11 +58,12 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :products,  only: [:index, :show]
-  resources :brands,    only: [:index, :show]
-  resources :catalogs,  only: [:index, :show]
-  resources :line_items
-  resources :carts
-  resources :orders
+  resources :products,      only: [:show]
+  resources :brands,        only: [:show]
+  resources :catalogs,      only: [:show]
+  resources :line_items,    only: [:create, :show, :destroy]
+  resources :carts,         only: [:create, :update, :new, :show, :destroy]
+  resources :orders,        only: [:create, :update, :new, :destroy]
+  resources :blog_posts,     only: [:show, :index]
 
 end

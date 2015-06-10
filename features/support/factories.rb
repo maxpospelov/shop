@@ -49,12 +49,23 @@ FactoryGirl.define do
   end
 
   factory :order do
+    user_name   'User'
+    phone       '12345678'
+    address     'Address'
+    email       'email@mail.com'
   end
 
   factory :line_item do
     association         :product,   factory: :product
     association         :cart,      factory: :cart
     association         :order,     factory: :order
+  end
+
+  factory :blog_post do
+    sequence(:title){|n| "Title#{n}"}
+
+    short_description  'Short Description'
+    full_description   'Full  Description'
   end
 
 end
