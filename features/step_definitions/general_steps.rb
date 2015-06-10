@@ -60,6 +60,16 @@ Then(/^Count recommend items equal six\.$/) do
 end
 
 
+When(/^Click on product button\.$/) do
+  click_button "в корзину"
+end
+
+Then(/^Should be link 'корзине'$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+
+
 
 
 

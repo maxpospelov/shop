@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//require turbolinks
 //= require_tree .
+
+jQuery(function($){
+    $("input.button").click(function(){
+        $(this).val("отправлено");
+    });
+});

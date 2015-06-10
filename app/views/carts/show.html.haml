@@ -1,47 +1,46 @@
-%h1 В корзине
-= link_to "Delete", cart_path(@cart), method: :delete
-%table#purchases
-  %tbody
-    -@cart.line_items.each do |line_item|
-      %tr
-        %td.image
-          = link_to image_tag(line_item.product.image_url(:thumb)), product_path(line_item.product)
-        %td.name
-          = link_to line_item.product.name, product_path(line_item.product)
-        %td.price
-          = number_to_rubel line_item.product.price
-        %td.amount
-          %select
-            %option{:value => line_item.count, :selected => true}= line_item.count
-            -(1..50).each do |i|
-              %option{:value => i}= i
-        %td.remove
-          = link_to image_tag('delete.png'), line_item_path(line_item), method: :delete
-%h2 Выберите способ доставки:
-%ul#deliveries
-  %li
-    %checkbox
-      %input.radio-input{type: 'radio', checked: true}
-    %h3
-      %label Курьерская доставка по Москве (бесплатно)
-    %div.description
-    %p
-      %span Курьерская доставка осуществляется на следующий день после оформления заказа, если товар есть в наличии. Курьерская доставка осуществляется в пределах Томска и Северска ежедневно с 10.00 до 21.00. Заказ на сумму свыше 300 рублей доставляется бесплатно.&nbsp;<br><br>Стоимость бесплатной доставки раcсчитывается от суммы заказа с учтенной скидкой. В случае если сумма заказа после применения скидки менее 300р, осуществляется платная доставка.&nbsp;<br><br>При сумме заказа менее 300 рублей стоимость доставки составляет от 50 рублей.
-    %li
-      .checkbox
-        %input.radio-input{type: 'radio', checked: true}
-      %h3
-        %label Самовывоз (бесплатно)
-      .description
-        .p Удобный, бесплатный и быстрый способ получения заказа.
-        .pАдрес офиса: Адрес офиса: Москва, ул. Арбат, 1/3, офис 419
-
-%h2 Адрес получателя
-.form
+= simple_form_for @order do |f|
   .cart_form
-    = simple_form_for @order do |f|
-      = f.input :user_name, label: 'Имя, фамилия', class: '', id: ''
-      = f.input :email, label: 'Email', type: 'text'
-      = f.input :phone, label: 'Телефон', type: 'text'
-      = f.input :address, label: 'Адрес доставки'
-      = f.submit 'Оформить заказ', class: 'button'
+    %h1 В корзине
+    = link_to "Delete", cart_path(@cart), method: :delete
+    %table#purchases
+      %tbody
+        -@cart.line_items.each do |line_item|
+          %tr{"data-item-id" => line_item.id}
+            %td.image
+              = link_to image_tag(line_item.product.image_url(:thumb)), product_path(line_item.product)
+            %td.name
+              = link_to line_item.product.name, product_path(line_item.product)
+            %td.price
+              = number_to_rubel line_item.product.price
+            %td.amount
+              %select
+                %option{:value => line_item.count, :selected => true}= line_item.count
+                -(1..50).each do |i|
+                  %option{:value => i}= i
+            %td.remove
+              = link_to image_tag('delete.png'), line_item_path(line_item), method: :delete, data: {confirm: "Вы уверены?" }
+    %h2 Выберите способ доставки:
+    %ul#deliveries
+      %li
+        = f.radio_button :pay_type, Order::PAYMENT_TYPES
+        = f.label "Курьерская доставка по Москве (бесплатно)"
+        .description
+          %p
+            %span Курьерская доставка осуществляется на следующий день после оформления заказа, если товар есть в наличии. Курьерская доставка осуществляется в пределах Томска и Северска ежедневно с 10.00 до 21.00. Заказ на сумму свыше 300 рублей доставляется бесплатно.&nbsp;<br><br>Стоимость бесплатной доставки раcсчитывается от суммы заказа с учтенной скидкой. В случае если сумма заказа после применения скидки менее 300р, осуществляется платная доставка.&nbsp;<br><br>При сумме заказа менее 300 рублей стоимость доставки составляет от 50 рублей.
+      %li
+        = f.radio_button :pay_type, Order::PAYMENT_TYPES
+        %h3
+          = f.label "Самовывоз (бесплатно)"
+        .description
+          .p Удобный, бесплатный и быстрый способ получения заказа.
+          .pАдрес офиса: Адрес офиса: Москва, ул. Арбат, 1/3, офис 419
+
+    = f.input :user_name, label: 'Имя, фамилия'
+    %br
+    = f.input :email, label: 'Email'
+    %br
+    = f.input :phone, label: 'Телефон'
+    %br
+    = f.input :address, label: 'Адрес доставки'
+    %br
+    = f.submit 'Оформить заказ', class: 'button'

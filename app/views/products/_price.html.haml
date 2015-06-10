@@ -7,4 +7,4 @@
         %span.price
           = number_to_currency(product.price, unit: "руб.", separator: ".", delimiter: " ", format: "%n %u")
           %span.currency
-=button_to  'в корзину', line_items_path(product_id: product), class: 'button'
+=button_to  'в корзину', line_items_path(product_id: product), class: 'button', remote: true
