@@ -1,0 +1,1 @@
+jQuery(function(t){t("td.amount select").change(function(){var e=t(this),n=e.children("option:selected"),a=n.val(),i=e.parents("tr")[0];t.ajax({url:"/line_items/"+t(i).attr("data-item-id"),type:"POST",data:{_method:"PUT",line_item:{count:parseInt(a)}},success:function(){}})})});
