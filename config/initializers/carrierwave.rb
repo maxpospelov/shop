@@ -31,7 +31,12 @@ end
 
 if Rails.env.production?
   CarrierWave.configure do |config|
-    #config.root = Rails.root.join('tmp')
-    config.cache_dir = "#{Rails.root}/tmp/uploads"
+    config.root = Rails.root.join('tmp')
+    config.cache_dir = 'carrierwave'
+
+    config.storage = :s3
+    config.s3_access_key_id = 'AKIAIT25W2UA7RFIMWAQ'
+    config.s3_secret_access_key = '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'
+    config.s3_bucket = 'fringoo'
   end
 end
