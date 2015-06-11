@@ -29,7 +29,7 @@ Shop::Application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.serve_static_assets = true
   config.assets.compile = true
-  config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
+  config.assets.precompile += [/^[a-z0-9]\w+\.(css|js)$/]
 
   # Generate digests for assets URLs.
   config.assets.digest = true
