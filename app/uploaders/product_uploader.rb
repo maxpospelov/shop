@@ -10,10 +10,12 @@ class ProductUploader < CarrierWave::Uploader::Base
   #storage :file
 
   if Rails.env.production?
-    storage :s3
+    storage :dropbox
   else
     storage :file
   end
+
+
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

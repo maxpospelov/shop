@@ -12,6 +12,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'haml-rails'
 gem 'carrierwave'
+gem 'carrierwave-dropbox'
 gem "rmagick"
 
 # Use SCSS for stylesheets
@@ -50,7 +51,6 @@ gem 'spring',        group: :development
 group :production do
   gem 'carrierwave-aws'
   gem 'rails_12factor'
-  gem 'fog'
 end
 
 group :development, :test do
