@@ -9,10 +9,11 @@ class ProductUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   #storage :file
 
+  
   if Rails.env.production?
     storage :dropbox
   else
-    storage :file
+    storage :dropbox
   end
 
 
