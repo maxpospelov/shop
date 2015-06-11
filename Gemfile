@@ -48,6 +48,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 group :production do
+  gem 'carrierwave-aws'
   gem 'rails_12factor'
   gem 'fog'
 end
