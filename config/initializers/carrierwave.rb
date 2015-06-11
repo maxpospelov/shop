@@ -34,7 +34,6 @@ if Rails.env.production?
     config.root = Rails.root.join('tmp')
     config.cache_dir = 'carrierwave'
 
-    config.storage = :s3
     config.s3_access_key_id = 'AKIAIT25W2UA7RFIMWAQ'
     config.s3_secret_access_key = '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'
     config.s3_bucket = 'fringoo'

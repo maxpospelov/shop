@@ -15,7 +15,7 @@
 /log/*.log
 /tmp
 
-.idea/*
-.idea/workspace.xml
+/.idea/*
+/.idea/workspace.xml
 /public/uploads/*
 
