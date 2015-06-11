@@ -5,11 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/blog_posts/show.html.haml" line="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e83e18d-b820-42c2-9ec6-553074ad5bf0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/manifest-c6b96b9adab9982d0ed7e5a93b2ec818.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/uploaders/product_uploader.rb" afterPath="$PROJECT_DIR$/app/uploaders/product_uploader.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1e83e18d-b820-42c2-9ec6-553074ad5bf0" name="Default" comment="" />
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/tmp/" />
