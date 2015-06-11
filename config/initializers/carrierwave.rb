@@ -33,9 +33,12 @@ if Rails.env.production?
   CarrierWave.configure do |config|
     config.root = Rails.root.join('tmp')
     config.cache_dir = 'carrierwave'
-
-    config.s3_access_key_id = 'AKIAIT25W2UA7RFIMWAQ'
-    config.s3_secret_access_key = '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'
-    config.s3_bucket = 'fringoo'
+    
+    config.fog_credentials = {
+        :provider               => 'AWS',                        # required
+        :aws_access_key_id      => 'AKIAIT25W2UA7RFIMWAQ',                        # required
+        :aws_secret_access_key  => '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',                     # required
+    }
+    config.fog_directory  = 'fringoo'                             # required
   end
 end
