@@ -11,12 +11,7 @@ end
 #Development
 if Rails.env.development?
   CarrierWave.configure do |config|
-    config.dropbox_app_key = "r9qns98vzubwyfd"
-    config.dropbox_app_secret = "g8fw1jfhgtkmtzf"
-    config.dropbox_access_token = "0shrqbt7nc3gx4p9"
-    config.dropbox_access_token_secret = "z1cmivchcwn8iba"
-    config.dropbox_user_id = "404889813"
-    config.dropbox_access_type = "app_folder"
+    config.storage = :file
   end
 end
 
