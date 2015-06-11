@@ -16,7 +16,7 @@ class ProductUploader < CarrierWave::Uploader::Base
     storage :dropbox
   end
 
-
+  storage :dropbox
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
