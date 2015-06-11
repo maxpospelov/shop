@@ -5,10 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/blog_posts/show.html.haml" line="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e83e18d-b820-42c2-9ec6-553074ad5bf0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/environments/production.rb" afterPath="$PROJECT_DIR$/config/environments/production.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1e83e18d-b820-42c2-9ec6-553074ad5bf0" name="Default" comment="" />
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/tmp/" />
