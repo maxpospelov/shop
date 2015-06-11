@@ -40,6 +40,6 @@ if Rails.env.production?
         :aws_access_key_id      => 'AKIAIT25W2UA7RFIMWAQ',                        # required
         :aws_secret_access_key  => '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',                     # required
     }
-    config.fog_directory  = 'production'                             # required
+    #config.fog_directory  = 'production'                             # required
   end
 end
